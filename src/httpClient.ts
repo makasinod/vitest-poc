@@ -24,7 +24,7 @@ export class HttpClient {
 		return response.data;
 	}
 
-	public async post<TResponse, TRequest = unknown>(endpoint: string, data: TRequest) {
+	public async post<TResponse, TRequest>(endpoint: string, data: TRequest) {
 		const url = `${this.baseUrl}${endpoint}`;
 		const response = await axios.post<TResponse>(url, data, {
 			auth: {
